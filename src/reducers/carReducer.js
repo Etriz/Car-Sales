@@ -24,6 +24,20 @@ export const carReducer = (state = initialState, action) => {
           ...state.additionalFeatures.filter((item) => item.id !== action.payload.id),
         ],
       };
+    case "REMOVE":
+      return {
+        ...state,
+        additionalPrice: state.additionalPrice - action.payload.price,
+        car: {
+          ...state.car,
+          features: [...state.car.features.filter((item) => item.id !== action.payload.id)],
+        },
+        additionalFeatures: [...state.additionalFeatures, action.payload].sort((a, b) => {
+          const itemA = a.id;
+          const itemB = b.id;
+          return itemA - itemB;
+        }),
+      };
 
     default:
       return state;

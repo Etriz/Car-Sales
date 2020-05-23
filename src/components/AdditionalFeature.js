@@ -19,9 +19,4 @@ const AdditionalFeature = (props) => {
   );
 };
 
-const stateToProps = (state) => {
-  return {
-    // addFeature: state.addFeature,
-  };
-};
-export default connect(stateToProps, { addFeature })(AdditionalFeature);
+export default connect(() => ({}), { addFeature })(AdditionalFeature);
