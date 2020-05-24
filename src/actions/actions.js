@@ -1,6 +1,6 @@
-export const addFeature = (feature) => {
-  return { type: "ADD", payload: feature };
+export const addFeature = (feature, carName) => {
+  return { type: "ADD", payload: { ...feature, carName: carName } };
 };
-export const removeFeature = (feature) => {
-  return { type: "REMOVE", payload: feature };
+export const removeFeature = (feature, carName) => {
+  return { type: "REMOVE", payload: { ...feature, carName: carName } };
 };

@@ -10,7 +10,7 @@ const AdditionalFeature = (props) => {
         className="button"
         onClick={() => {
           // console.log("payload", props.feature);
-          props.addFeature(props.feature);
+          props.addFeature(props.feature, props.carName);
         }}>
         Add
       </button>

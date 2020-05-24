@@ -1,32 +1,27 @@
 import React from "react";
-import { connect } from "react-redux";
+import { Switch, Route } from "react-router";
+import { Link } from "react-router-dom";
 
-import Header from "./components/Header";
-import AddedFeatures from "./components/AddedFeatures";
-import AdditionalFeatures from "./components/AdditionalFeatures";
-import Total from "./components/Total";
+import Car from "./components/Car";
 
-const App = (props) => {
+const App = () => {
   return (
-    <div className="boxes">
-      <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} />
+    <>
+      <nav>
+        Choose Car
+        <Link to="/">None</Link>
+        <Link to="/mustang">Mustang</Link>
+        <Link to="/camaro">Camaro</Link>
+      </nav>
+      <div>
+        <Switch>
+          <Route path="/:carName">
+            <Car />
+          </Route>
+        </Switch>
       </div>
-      <br />
-      <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
-        <Total car={props.car} additionalPrice={props.additionalPrice} />
-      </div>
-    </div>
+    </>
   );
 };
 
-const stateToProps = (state) => {
-  return {
-    additionalPrice: state.additionalPrice,
-    car: state.car,
-    additionalFeatures: state.additionalFeatures,
-  };
-};
-export default connect(stateToProps, {})(App);
+export default App;

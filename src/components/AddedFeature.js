@@ -9,7 +9,7 @@ const AddedFeature = (props) => {
       <button
         className="button"
         onClick={() => {
-          props.removeFeature(props.feature);
+          props.removeFeature(props.feature, props.carName);
         }}>
         X
       </button>
