@@ -10,15 +10,39 @@ body {
   padding: 3rem;
   place-items: center;
 }
+nav {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  font-size: larger;
+  color: lightgray;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  a {
+    background: hotpink;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: white;
+    margin: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.25s ease-in;
+    &:hover {
+      background: white;
+      border: 1px solid hotpink;
+      color: #333;
+    }
+  }
+}
 .boxes {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
+  // grid-gap: 2em;
+  // grid-template-columns: repeat(2, minmax(350px, 1fr));
+  // grid-template-rows: auto;
 }
 .box {
   display: flex;
   flex-direction: column;
+  min-width: 350px;
   // min-height: 100%;
   h1 {
     font-size: 20px;

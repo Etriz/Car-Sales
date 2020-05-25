@@ -8,18 +8,16 @@ const App = () => {
   return (
     <>
       <nav>
-        Choose Car
+        <p>Choose Car</p>
         <Link to="/">None</Link>
         <Link to="/mustang">Mustang</Link>
         <Link to="/camaro">Camaro</Link>
       </nav>
-      <div>
-        <Switch>
-          <Route path="/:carName">
-            <Car />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/:carName">
+          <Car />
+        </Route>
+      </Switch>
     </>
   );
 };
